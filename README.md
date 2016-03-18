@@ -19,10 +19,10 @@ So we expect you to give us a project that works with the get/post/put/delete me
 
 ### Code Convention
 We want you to use :
-**CamelCase** named function
-**PhpDocs comments** for each function/object
-**explicit commit message** for each stage.
-**MVC pattern**
+- **CamelCase** named function
+- **PhpDocs comments** for each function/object
+- **explicit commit message** for each stage.
+- **MVC pattern**
 
 
 #### Expected URL:
