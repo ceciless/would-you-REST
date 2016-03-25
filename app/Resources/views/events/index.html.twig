@@ -1,0 +1,47 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Event List</h1>
+
+    <table class="dataintable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Event start date</th>
+                <th>Event end date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td><a href="{{ path('events_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                <td>{{ event.name }}</td>
+                <td>{% if event.eventStartDate %}{{ event.eventStartDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if event.eventEndDate %}{{ event.eventEndDate|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('events_show', { 'id': event.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('events_edit', { 'id': event.id }) }}">edit</a>
+                        </li>
+                         <li>
+                            <a href="{{ path('events_schedule', { 'id': event.id }) }}">schedule</a>
+                        </li>
+                        
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('events_new') }}">Create a new team</a>
+        </li>
+    </ul>
+{% endblock %}

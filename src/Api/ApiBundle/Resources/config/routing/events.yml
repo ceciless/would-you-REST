@@ -1,0 +1,28 @@
+events_index:
+    path:     /
+    defaults: { _controller: "ApiBundle:Events:index" }
+    methods:  GET
+
+events_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApiBundle:Events:show" }
+    methods:  GET
+
+events_new:
+    path:     /new
+    defaults: { _controller: "ApiBundle:Events:new" }
+    methods:  [GET, POST]
+
+events_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApiBundle:Events:edit" }
+    methods:  [GET, POST]
+
+events_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApiBundle:Events:delete" }
+    methods:  DELETE
+
+events_schedule:
+    path:     /{id}/schedule
+    defaults: { _controller: "ApiBundle:Events:schedule" }

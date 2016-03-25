@@ -1,0 +1,16 @@
+api_homepage:
+    path:     /api
+    defaults: { _controller: ApiBundle:Default:index }
+
+api_teams:
+    resource: "@ApiBundle/Resources/config/routing/teams.yml"
+    prefix:   /api/teams
+
+api_events:
+    resource: "@ApiBundle/Resources/config/routing/events.yml"
+    prefix:   /api/events
+
+api_matchs:
+        resource: "@ApiBundle/Resources/config/routing/matches.yml"
+        prefix:   /api/matchs
+

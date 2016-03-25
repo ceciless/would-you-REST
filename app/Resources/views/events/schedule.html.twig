@@ -1,0 +1,49 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+
+    <h1>Event Match List</h1>
+
+    <table class="dataintable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                 <th>Home team</th>
+                <th>Away team</th>               
+                <th>Home score</th>
+                <th>Away score</th>
+                <th>Snitch</th>
+                <th>P</th>
+                <th>Padj</th>
+                <th>Swim</th>
+                <th>Event name</th>
+                <th>Event order</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for match in matchs %}
+            <tr>
+                <td><a href="{{ path('events_schedule', { 'id': match.id }) }}">{{ match.id }}</a></td>
+                <td>{{ match.homeTeamId}}</td>
+                <td>{{ match.awayTeamId }}</td>               
+                <td>{{ match.homeScore }}</td>
+                <td>{{ match.awayScore }}</td>
+                <td>{{ match.snitch }}</td>
+                <td>{{ match.p }}</td>
+                <td>{{ match.padj }}</td>
+                <td>{{ match.SWIM }}</td>
+                <td>{{ match.eventId }}</td>             
+                <td>{{ match.eventOrder }}</td>               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('events_index') }}">Back to the list</a>
+        </li>
+    </ul>
+
+{% endblock %}

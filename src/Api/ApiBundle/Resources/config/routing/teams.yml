@@ -1,0 +1,28 @@
+teams_index:
+    path:     /
+    defaults: { _controller: "ApiBundle:Teams:index" }
+    methods:  GET
+
+teams_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApiBundle:Teams:show" }
+    methods:  GET
+
+teams_new:
+    path:     /new
+    defaults: { _controller: "ApiBundle:Teams:new" }
+    methods:  [GET, POST]
+
+teams_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApiBundle:Teams:edit" }
+    methods:  [GET, POST]
+
+teams_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApiBundle:Teams:delete" }
+    methods:  DELETE
+
+teams_matchs:
+    path:     /{id}/matchs
+    defaults: { _controller: "ApiBundle:Teams:matchs" }
